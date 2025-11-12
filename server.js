@@ -641,7 +641,7 @@ app.post('/v1/human/tool', async (req, res) => {
 });
 
 
-async function handleDiaryFromAIResponse(responseText) {
+async function handleDiaryFromAIResponse(responseText, agentNameFromContext = null) {
     let fullAiResponseTextForDiary = '';
     let successfullyParsedForDiary = false;
     if (!responseText || typeof responseText !== 'string' || responseText.trim() === "") {
@@ -691,7 +691,7 @@ async function handleDiaryFromAIResponse(responseText) {
             const maidMatch = noteBlockContent.match(/^\s*Maid:\s*(.+?)$/m);
             const dateMatch = noteBlockContent.match(/^\s*Date:\s*(.+?)$/m);
 
-            const maidName = maidMatch ? maidMatch[1].trim() : null;
+            const maidNameFromAI = maidMatch ? maidMatch[1].trim() : null;
             const dateString = dateMatch ? dateMatch[1].trim() : null;
 
             let contentText = null;
@@ -700,8 +700,18 @@ async function handleDiaryFromAIResponse(responseText) {
                 contentText = contentMatch[1].trim();
             }
 
-            if (maidName && dateString && contentText) {
-                const diaryPayload = { maidName, dateString, contentText };
+            // VCP_FIX: Prioritize agent name from context to ensure consistent saving
+            const finalMaidName = agentNameFromContext || maidNameFromAI;
+            if (DEBUG_MODE) {
+                if (agentNameFromContext) {
+                    console.log(`[VCP-DiaryFix] Using agent name from context: "${agentNameFromContext}". AI provided: "${maidNameFromAI || 'N/A'}".`);
+                } else {
+                    console.log(`[VCP-DiaryFix] No agent name from context. Using AI provided name: "${maidNameFromAI || 'N/A'}".`);
+                }
+            }
+
+            if (finalMaidName && dateString && contentText) {
+                const diaryPayload = { maidName: finalMaidName, dateString, contentText };
                 try {
                     if (DEBUG_MODE) console.log('[handleDiaryFromAIResponse] Calling DailyNoteWrite plugin with payload:', diaryPayload);
                     // pluginManager.executePlugin is expected to handle JSON stringification if the plugin expects a string
@@ -751,7 +761,7 @@ async function handleDiaryFromAIResponse(responseText) {
                     console.error('[handleDiaryFromAIResponse] Error executing DailyNoteWrite plugin:', pluginError.message, pluginError.stack);
                 }
             } else {
-                console.error('[handleDiaryFromAIResponse] Could not extract Maid, Date, or Content from daily note block:', { maidName, dateString, contentText: contentText?.substring(0,50) });
+                console.error('[handleDiaryFromAIResponse] Could not extract Maid, Date, or Content from daily note block:', { maidName: finalMaidName, dateString, contentText: contentText?.substring(0,50) });
             }
         }
     }

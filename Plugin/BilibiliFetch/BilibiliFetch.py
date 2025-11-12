@@ -240,10 +240,13 @@ def process_bilibili_url(video_input: str, lang_code: str | None = None) -> str:
                 logging.info(f"Successfully processed subtitle text for BVID {bvid}. Length: {len(processed_text)}")
                 if processed_text:
                     processed_text += "\n\n——以上内容来自VCP-STT语音识别转文本，可能存在谐音错别字内容，请自行甄别"
-                return processed_text
+                    return processed_text
+                else:
+                    logging.warning(f"No subtitle content found for BVID {bvid} after processing. This could be due to an invalid cookie or no subtitles on the video.")
+                    return "无法获取视频字幕。原因可能是：1. 该视频没有字幕。 2. 用于BilibiliFetch插件的Cookie已过期或无效，请在 config.env 文件中更新 BILIBILI_COOKIE。"
             else:
                 logging.warning(f"Subtitle JSON for BVID {bvid} has unexpected structure or is missing 'body'. Raw: {subtitle_json_string[:100]}...")
-                return "" # Return empty string if structure is wrong
+                return "无法获取视频字幕。插件未能从Bilibili API返回的数据中找到有效的字幕结构，可能是Cookie无效或API已更改。" # Return specific error
         except json.JSONDecodeError:
             logging.error(f"Failed to decode subtitle JSON for BVID {bvid}. Raw: {subtitle_json_string[:100]}...")
             return "" # Return empty string on decode error

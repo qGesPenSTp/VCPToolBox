@@ -1,0 +1,17 @@
+{
+  "0": {
+    "text": "这是为DailyNoteEditor准备的手动测试条目，长度必须超过15个字符才能被编辑。",
+    "sourceFile": "manual_test_entry.txt",
+    "chunkHash": "84b2b1ef1b503863f8e7e37feb56545ecddb2d80a330199845a1de299d8f5d8b"
+  },
+  "1": {
+    "text": "记录于2025年11月1日：我们讨论了关于‘星尘计划’的初步构想。\n---\n关于项目的核心技术，我们确定了‘阿尔法’和‘贝塔’两个关键模块。\n---\n那个关于未来能源的方案似乎很有前景。\n---\n我们最终决定采用核聚变作为未来能源方案的核心。",
+    "sourceFile": "rag_test_entries.txt",
+    "chunkHash": "cc22aa0f7cd41cfea04bcd897ffbc0873f80b6bd092fe394d0134bdbda138d9c"
+  },
+  "2": {
+    "text": "2025.11.10-[_VCPOpsTest]\n今天我们讨论了关于‘星尘计划’的初步构想。\n---\n2025.11.10-[_VCPOpsTest]\n今天，团队就‘星尘计划’的初步想法进行了交流。\n---\n2025.11.10-[_VCPOpsTest]\n关于‘星尘计划’，我们有了一些初步的想法和讨论。",
+    "sourceFile": "redundant_entries.txt",
+    "chunkHash": "b56ed1ee69b840f682d4ae3fec808ab1e5590a9b71e3e690557393c5943168e5"
+  }
+}

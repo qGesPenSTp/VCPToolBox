@@ -1,0 +1,78 @@
+{
+  "manifestVersion": "1.0.0",
+  "name": "YtDLPDownload",
+  "version": "0.1.0",
+  "displayName": "yt-dlp 下載器 (異步)",
+  "description": "以已編譯的 yt-dlp 進行長耗時的實際下載作業。submit 指令會立即回傳占位符 {{VCP_ASYNC_RESULT::YtDLPDownload::{req_id}}}，稍後結果將透過 /plugin-callback 回調返回。支援批次語法 command1/url1/…",
+  "author": "VCP Community",
+  "pluginType": "asynchronous",
+  "entryPoint": {
+    "type": "nodejs",
+    "command": "node ytdlp_downloader.js"
+  },
+  "communication": {
+    "protocol": "stdio",
+    "timeout": 18000000
+  },
+  "configSchema": {
+    "YTDLP_PATH": {
+      "type": "string",
+      "description": "yt-dlp 可執行檔路徑（例如 C:\\\\tools\\\\yt-dlp\\\\yt-dlp.exe）",
+      "default": "yt-dlp"
+    },
+    "FFMPEG_PATH": {
+      "type": "string",
+      "description": "ffmpeg/ffprobe 所在資料夾或二進位路徑",
+      "default": ""
+    },
+    "DOWNLOAD_DIR": {
+      "type": "string",
+      "description": "下載輸出主目錄 (對應 -P home:)",
+      "default": "./file/video"
+    },
+    "COOKIES_FROM_BROWSER": {
+      "type": "string",
+      "description": "自動從瀏覽器載入 cookies；例如 edge、chrome:Default",
+      "default": "edge"
+    },
+    "PROXY": {
+      "type": "string",
+      "description": "HTTP/HTTPS/SOCKS 代理，例如 socks5://127.0.0.1:1080",
+      "default": ""
+    },
+    "CALLBACK_BASE_URL": {
+      "type": "string",
+      "description": "VCP 伺服器回調根路徑（例如 http://localhost:6005/plugin-callback）",
+      "default": "http://localhost:6005/plugin-callback"
+    },
+    "PLUGIN_NAME_FOR_CALLBACK": {
+      "type": "string",
+      "description": "回調時使用的插件名路徑段（必須與本外掛 name 相同或保持一致）",
+      "default": "YtDLPDownload"
+    },
+    "TIMEOUT_MS": {
+      "type": "number",
+      "description": "單次 yt-dlp 執行的超時毫秒（每個下載任務）",
+      "default": 3600000
+    }
+  },
+  "capabilities": {
+    "invocationCommands": [
+      {
+        "command": "submit",
+        "description": "提交一個或多個下載任務（長耗時），立即返回占位符，完成後以 HTTP 回調返回結果。\n請在你的最終回覆中原樣包含以下占位符：{{{{VCP_ASYNC_RESULT::YtDLPDownload::{req_id}}}}}\n參數（常用白名單映射到 yt-dlp 安全參數）：\n- url (必填): 下載 URL。也支援批次 url1/url2 對應 command1/command2。\n- format (-f): 格式選擇表達式，如 \"bv*+ba/b\"。\n- formatSort (-S): 格式排序，如 \"res:720,codec\"。\n- outputTemplate (-o): 輸出模板，如 \"%(title)s [%(id)s].%(ext)s\"。\n- subLangs (--sub-langs): 字幕語言，如 \"en,zh-Hant\"；可搭配 writeSubs / writeAutoSubs。\n- writeSubs (--write-subs): 布林，寫字幕檔。\n- writeAutoSubs (--write-auto-subs): 布林，寫自動字幕。\n- embedSubs (--embed-subs): 布林，內嵌字幕。\n- audioOnly (-x): 布林，僅萃取音訊；可搭配 audioFormat (--audio-format)。\n- audioFormat: mp3/m4a/opus/flac 等，需配合 audioOnly。\n- mergeOutputFormat (--merge-output-format): 如 \"mp4/mkv\"。\n- recodeVideo (--recode-video): 需要轉碼時指定容器。\n- remuxVideo (--remux-video): 僅轉封裝。\n- concurrentFragments (-N): 片段並行數量。\n- throttledRate (--throttled-rate): 判斷限速重試的最低速率，例如 \"100K\"。\n- playlistItems (-I): 指定清單項目範圍。\n- downloadSections (--download-sections): 僅下載章節/時間段，例如 \"*10:15-inf\"。\n- impersonate (--impersonate): 模擬客戶端，例如 \"chrome\"。\n- cookiesFromBrowser: 覆寫配置的 cookies 來源。\n- proxy: 覆寫代理。\n- pathsHome/pathsTemp/pathsSubtitle: 對應 -P home:/temp:/subtitle:。\n- noCacheDir (--no-cache-dir): 布林，關閉快取。\n批次語法: 使用 command1: submit, url1: ..., format1: ...; command2: submit, url2: ... 等。系統會逐項執行並於完成後以相同 requestId 回調。\n回調內容: 包含 requestId、任務彙整（每項 success/failed、最終檔案路徑 filepath、id/title/ext/url 等）。",
+        "example": "<<<[TOOL_REQUEST]>>>\nmaid:「始」AgentName「末」,\ntool_name:「始」YtDLPDownload「末」,\ncommand:「始」submit「末」,\nurl:「始」https://www.youtube.com/watch?v=BaW_jenozKc「末」,\nformat:「始」bv*+ba/b「末」,\noutputTemplate:「始」%(title)s [%(id)s].%(ext)s「末」,\nsubLangs:「始」en,zh-Hant「末」,\nwriteSubs:「始」true「末」\n<<<[END_TOOL_REQUEST]>>>"
+      },
+      {
+        "command": "query",
+        "description": "（備用）查詢指定 requestId 的任務狀態。參數: requestId (必填)。",
+        "example": "<<<[TOOL_REQUEST]>>>\nmaid:「始」AgentName「末」,\ntool_name:「始」YtDLPDownload「末」,\ncommand:「始」query「末」,\nrequestId:「始」2025-09-14-015959-abc123「末」\n<<<[END_TOOL_REQUEST]>>>"
+      }
+    ]
+  }
+  "webSocketPush": {
+    "enabled": true,
+    "messageType": "ytdlp_download_status",
+    "targetClientType": "VCPLog"
+  }
+}

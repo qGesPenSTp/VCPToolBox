@@ -1,0 +1,32 @@
+{
+  "config": {},
+  "groups": {
+    "VCP工具测试专用组": {
+      "words": [
+        "测试",
+        "工具检查",
+        "批次一",
+        "认知与记忆"
+      ],
+      "auto_learned": [],
+      "weight": 1,
+      "last_activated": null,
+      "activation_count": 0,
+      "vector_id": "febcf499-2e25-4c08-b654-6a14cce21f05",
+      "words_hash": "b328ebdfeb9614e1ee07c963b5f5c47c8f6aafb1b5b75738ade9ecf69c86d17a"
+    },
+    "[项目代号]": {
+      "words": [
+        "阿尔法",
+        "贝塔",
+        "星尘计划"
+      ],
+      "auto_learned": [],
+      "weight": 1,
+      "last_activated": null,
+      "activation_count": 0,
+      "vector_id": "3cc270cb-8fe3-4abe-94a4-c1697a7fa8da",
+      "words_hash": "ac7d0e9f6001e6759f743723ff9bce4037a5c139195e5026f31c21d05ef1272c"
+    }
+  }
+}

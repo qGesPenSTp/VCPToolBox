@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "content": "【Tavern测试：这是在系统提示词之后注入的内容】",
+    "depth": 0,
+    "position": "after",
+    "enabled": true
+  },
+  {
+    "id": 2,
+    "content": "【Tavern测试：这是在最后一条用户消息之前注入的内容】",
+    "depth": 1,
+    "position": "before",
+    "enabled": true
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "manifestVersion": "1.0.0",
+  "name": "VideoAnalyzer",
+  "displayName": "AI视频分析插件",
+  "version": "1.0.0",
+  "description": "AI视频分析工具，支持视频下载、截图提取、音频转文字、AI笔记生成。支持Bilibili、YouTube、本地视频等多种来源。自动生成结构化Markdown笔记，包含视频截图、完整转录和AI分析。",
+  "author": "VCP Team",
+  "pluginType": "asynchronous",
+  "entryPoint": {
+    "type": "python",
+    "command": "python VideoAnalyzer.py"
+  },
+  "communication": {
+    "protocol": "stdio",
+    "timeout": 300000
+  },
+  "configSchema": {},
+  "capabilities": {
+    "invocationCommands": [
+      {
+        "command": "analyze",
+        "description": "【AI视频深度分析v1.0】专业视频分析工具，提供音频转文字和AI笔记生成服务。\n\n## 核心能力\n- 🎯 **音频转文字**：使用OpenAI Whisper API（gpt-4o-transcribe）进行高精度转录\n- 📝 **AI笔记生成**：生成结构化Markdown笔记，支持多种风格\n- 📸 **视频截图**：自动提取关键帧并插入笔记\n- 💾 **完整保存**：自动保存笔记、转录、截图和JSON结果\n\n## 何时使用此插件\n**请在以下情况下调用VideoAnalyzer而非BilibiliFetch：**\n- 用户要求「转录」、「转文字」、「语音转文字」\n- 用户要求「生成笔记」、「做笔记」、「整理笔记」\n- 用户要求「详细分析」、「深度分析」视频内容\n- 用户要求「下载视频」\n- 视频没有字幕或字幕不准确，需要重新转录\n- 用户需要AI生成的结构化笔记而非原始字幕\n\n**BilibiliFetch适用于：**\n- 只需要视频标题、描述等元数据\n- 只需要现有字幕文本\n- 快速获取视频信息\n\n## 支持平台\n- Bilibili（B站）\n- YouTube\n- 本地视频文件\n\n## 参数说明\n- url: 视频URL或本地文件路径（必需）\n- mode: 分析模式（可选）\n  * 'download': 只下载视频\n  * 'transcribe': 只转文字（不生成笔记）\n  * 'analyze': 转文字+AI分析（默认）\n  * 'summary': 生成视频摘要\n- language: 音频语言（可选，默认auto）\n- style: 笔记风格（可选）\n  * 'academic': 学术风格\n  * 'casual': 口语风格\n  * 'detailed': 详细记录\n  * 'brief': 简要总结（默认）\n  * 'custom': 自定义风格（需提供custom_prompt）\n- custom_prompt: 自定义提示词（可选，当style='custom'时使用）\n  * 使用{transcript}作为转录文本的占位符\n\n## 输出文件\n插件会在 `VCPToolBox-Full/Plugin/VideoAnalyzer/output/{video_id}/` 目录下生成：\n- notes.md: Markdown笔记（含截图、分析和转录）\n- transcript.txt: 完整转录文本\n- result.json: JSON格式结果\n- screenshots/: 视频截图目录\n\n请使用以下格式调用：\n<<<[TOOL_REQUEST]>>>\ntool_name:「始」VideoAnalyzer「末」,\nurl:「始」(必需) 视频URL或本地文件路径「末」,\nmode:「始」(可选) 分析模式：'download'、'transcribe'、'analyze'(默认)、'summary'「末」,\nlanguage:「始」(可选) 音频语言，默认auto「末」,\nstyle:「始」(可选) 笔记风格：'academic'、'casual'、'detailed'、'brief'(默认)、'custom'「末」,\ncustom_prompt:「始」(可选) 自定义提示词，使用{transcript}作为占位符「末」\n<<<[END_TOOL_REQUEST]>>>\n\n## 使用场景示例\n- 「帮我转录这个视频」 → mode='transcribe'\n- 「帮我下载这个视频」 → mode='download'\n- 「帮我做个学习笔记」 → mode='analyze', style='academic'\n- 「生成视频摘要」 → mode='summary'\n- 「详细分析视频内容」 → mode='analyze', style='detailed'",
+        "example": "## 基础用法\n\n分析Bilibili视频:\n```text\n<<<[TOOL_REQUEST]>>>\ntool_name:「始」VideoAnalyzer「末」,\nurl:「始」https://www.bilibili.com/video/BV1234567890「末」\n<<<[END_TOOL_REQUEST]>>>\n```\n\n分析本地视频:\n```text\n<<<[TOOL_REQUEST]>>>\ntool_name:「始」VideoAnalyzer「末」,\nurl:「始」D:/Videos/example.mp4「末」,\nmode:「始」analyze「末」,\nstyle:「始」academic「末」\n<<<[END_TOOL_REQUEST]>>>\n```\n\n生成视频摘要:\n```text\n<<<[TOOL_REQUEST]>>>\ntool_name:「始」VideoAnalyzer「末」,\nurl:「始」https://www.youtube.com/watch?v=xxxxx「末」,\nmode:「始」summary「末」\n<<<[END_TOOL_REQUEST]>>>\n```"
+      }
+    ]
+  }
+}

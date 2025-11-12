@@ -1,0 +1,32 @@
+{
+  "config": {},
+  "groups": {
+    "VCP工具测试专用组": {
+      "words": [
+        "测试",
+        "工具检查",
+        "批次一",
+        "认知与记忆"
+      ],
+      "auto_learned": [],
+      "weight": 1,
+      "vector": null,
+      "last_activated": null,
+      "activation_count": 0,
+      "vector_id": null
+    },
+    "[项目代号]": {
+      "words": [
+        "阿尔法",
+        "贝塔",
+        "星尘计划"
+      ],
+      "auto_learned": [],
+      "weight": 1,
+      "vector": null,
+      "last_activated": null,
+      "activation_count": 0,
+      "vector_id": null
+    }
+  }
+}

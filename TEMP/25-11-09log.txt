@@ -1,0 +1,404 @@
+[2025-11-09T07:40:00.269Z] [MCPOMonitor] [ERROR] Request failed for /openapi.json {
+  "error": "request to http://0.0.0.0:9000/openapi.json failed, reason: connect ECONNREFUSED 0.0.0.0:9000"
+}
+[2025-11-09T07:40:00.269Z] [MCPOMonitor] [ERROR] Failed to get tool details {
+  "error": "无法获取主OpenAPI规范: request to http://0.0.0.0:9000/openapi.json failed, reason: connect ECONNREFUSED 0.0.0.0:9000"
+}
+[2025-11-09T07:40:00.271Z] [MCPOMonitor] [ERROR] Request failed for /openapi.json {
+  "error": "request to http://0.0.0.0:9000/openapi.json failed, reason: connect ECONNREFUSED 0.0.0.0:9000"
+}
+[2025-11-09T07:40:00.303Z] [MCPOMonitor] [INFO] Cache updated successfully
+[2025-11-09T07:40:00.303Z] [MCPOMonitor] [INFO] Real-time status monitoring completed successfully at 2025/11/9 15:40:00
+[PluginManager] Placeholder {{MCPOServiceStatus}} for MCPOMonitor updated with value: "# 🔧 MCPO 服务状态监控报告（实时 检测）
+
+## 📊 服务器状态概览
+
+**服务器状态**: 🔴 连接失败
+**检测模式**: ..."
+[PluginManager] Static plugin DailyNoteGet produced stderr output: [DailyNoteGet][Debug] Starting diary scan in: D:\327AI-VCP\VCPToolBox\dailynote
+[DailyNoteGet][Debug] Scanning directory for character: ExampleMaid
+[DailyNoteGet][Debug] Found 1 relevant files (.txt, .md) for ExampleMaid
+[DailyNoteGet][Debug] Read content from 2025.04.25.txt (length: 191)
+[DailyNoteGet][Debug] Scanning directory for character: VCP开发
+[DailyNoteGet][Debug] Found 2 relevant files (.txt, .md) for VCP开发
+[DailyNoteGet][Debug] Read content from 插件开发指令集.txt (length: 545)
+[DailyNoteGet][Debug] Read content from 同步异步插件开发手册.md (length: 26706)
+[DailyNoteGet][Debug] Scanning directory for character: VCP论坛
+[DailyNoteGet][Debug] Found 0 relevant files (.txt, .md) for VCP论坛
+[DailyNoteGet][Debug] No .txt or .md files found for VCP论坛, setting content to empty marker.
+[DailyNoteGet][Debug] Scanning directory for character: 前思维簇
+[DailyNoteGet][Debug] Found 6 relevant files (.txt, .md) for 前思维簇
+[DailyNoteGet][Debug] Read content from 2077-04-12-16_47_44.txt (length: 1352)
+[DailyNoteGet][Debug] Read content from 2077-04-12-16_46_27.txt (length: 1250)
+[DailyNoteGet][Debug] Read content from 2077-04-12-16_47_12.txt (length: 716)
+[DailyNoteGet][Debug] Read content from 2077-04-12-17_12_21.txt (length: 885)
+[DailyNoteGet][Debug] Read content from 2077-04-12-16_46_44.txt (length: 1257)
+[DailyNoteGet][Debug] Read content from 2077-04-12-16_48_14.txt (length: 1165)
+[DailyNoteGet][Debug] Scanning directory for character: 反思簇
+[DailyNoteGet][Debug] Found 5 relevant files (.txt, .md) for 反思簇
+[DailyNoteGet][Debug] Read content from 2077-04-12-16_53_47.txt (length: 1009)
+[DailyNoteGet][Debug] Read content from 2077-04-12-16_54_18.txt (length: 1179)
+[DailyNoteGet][Debug] Read content from 2077-04-12-16_54_58.txt (length: 1101)
+[DailyNoteGet][Debug] Read content from 2077-04-12-16_53_12.txt (length: 1427)
+[DailyNoteGet][Debug] Read content from 2077-04-12-16_52_51.txt (length: 946)
+[DailyNoteGet][Debug] Scanning directory for character: 已整理日记
+[DailyNoteGet][Debug] Found 6 relevant files (.txt, .md) for 已整理日记
+[DailyNoteGet][Debug] Read content from 2025.11.07.5.txt (length: 43)
+[DailyNoteGet][Debug] Read content from 2025.11.07.4.txt (length: 44)
+[DailyNoteGet][Debug] Read content from 2025.11.07.3.txt (length: 48)
+[DailyNoteGet][Debug] Read content from 2025.11.07.txt (length: 40)
+[DailyNoteGet][Debug] Read content from 2025.11.07.2.txt (length: 48)
+[DailyNoteGet][Debug] Read content from 2025.11.07.6.txt (length: 34)
+[DailyNoteGet][Debug] Scanning directory for character: 测试思维簇
+[DailyNoteGet][Debug] Found 1 relevant files (.txt, .md) for 测试思维簇
+[DailyNoteGet][Debug] Read content from 2025-10-13T09-10-24-022Z.md (length: 254)
+[DailyNoteGet][Debug] Scanning directory for character: 结果辩证簇
+[DailyNoteGet][Debug] Found 6 relevant files (.txt, .md) for 结果辩证簇
+[DailyNoteGet][Debug] Read content from 2077-04-12-16_57_45.txt (length: 1170)
+[DailyNoteGet][Debug] Read content from 2077-04-12-16_57_23.txt (length: 1276)
+[DailyNoteGet][Debug] Read content from 2077-04-12-16_59_44.txt (length: 1041)
+[DailyNoteGet][Debug] Read content from 2077-04-12-16_58_19.txt (length: 1172)
+[DailyNoteGet][Debug] Read content from 2077-04-12-16_58_59.txt (length: 1250)
+[DailyNoteGet][Debug] Read content from 2077-04-12-17_19_21.txt (length: 353)
+[DailyNoteGet][Debug] Scanning directory for character: 逻辑推理簇
+[DailyNoteGet][Debug] Found 8 relevant files (.txt, .md) for 逻辑推理簇
+[DailyNoteGet][Debug] Read content from 2077-04-12-16_49_46.txt (length: 846)
+[DailyNoteGet][Debug] Read content from 2077-04-12-16_50_08.txt (length: 1027)
+[DailyNoteGet][Debug] Read content from 2077-04-12-16_50_38.txt (length: 1193)
+[DailyNoteGet][Debug] Read content from 2077-04-12-16_51_47.txt (length: 976)
+[DailyNoteGet][Debug] Read content from 谐音梗簇.txt (length: 396)
+[DailyNoteGet][Debug] Read content from 2077-04-12-16_51_20.txt (length: 1124)
+[DailyNoteGet][Debug] Read content from 2077-04-12-17_30_03.txt (length: 514)
+[DailyNoteGet][Debug] Read content from 2077-04-12-17_31_56.txt (length: 521)
+[DailyNoteGet][Debug] Scanning directory for character: 陈词总结梳理簇
+[DailyNoteGet][Debug] Found 7 relevant files (.txt, .md) for 陈词总结梳理簇
+[DailyNoteGet][Debug] Read content from 2077-04-12-17_01_40.txt (length: 1143)
+[DailyNoteGet][Debug] Read content from 2077-04-12-17_05_14.txt (length: 1012)
+[DailyNoteGet][Debug] Read content from 2077-04-12-17_02_16.txt (length: 992)
+[DailyNoteGet][Debug] Read content from 2077-04-12-17_00_48.txt (length: 1296)
+[DailyNoteGet][Debug] Read content from 2077-04-12-17_01_02.txt (length: 1105)
+[DailyNoteGet][Debug] Read content from 2077-04-12-17_12_23.txt (length: 754)
+[DailyNoteGet][Debug] Read content from 2077-04-12-17_17_55.txt (length: 638)
+[DailyNoteGet][Debug] Finished diary scan. Found diaries for 10 characters.
+[DailyNoteGet][Debug] Successfully wrote diary JSON to stdout.
+[PluginManager] Placeholder {{AllCharacterDiariesData}} for DailyNoteGet updated with value: "{"ExampleMaid":"[2025.04.25] - Your Maid\r\n和主人深入讨论了诺奖得主蒙塔尼耶关于“水传递DNA信..."
+[PluginManager] Scheduled update for static plugin: MCPOMonitor
+[PluginManager] Updating static plugin: MCPOMonitor
+[PluginManager] Scheduled update for static plugin: FRPSInfoProvider
+[PluginManager] Updating static plugin: FRPSInfoProvider
+[PluginManager] Static plugin FRPSInfoProvider produced stderr output: Error: FRPS_BASE_URL, FRPS_ADMIN_USER, or FRPS_ADMIN_PASSWORD environment variables are not set.
+[FRPSInfoProvider][Debug] 2025-11-09T07:40:10.322Z: FRPS config missing and cache unavailable: ENOENT: no such file or directory, open 'D:\327AI-VCP\VCPToolBox\Plugin\FRPSInfoProvider\frps_info_cache.txt'
+[PluginManager] Placeholder {{FRPSAllProxyInfo}} for FRPSInfoProvider updated with value: "Error: FRPS_BASE_URL, FRPS_ADMIN_USER, or FRPS_ADMIN_PASSWORD environm..."
+[PluginManager] Static plugin MCPOMonitor produced stderr output: [MCPOMonitor] 配置的刷新间隔: */10 * * * * *
+[MCPOMonitor] MCPO服务器: http://0.0.0.0:9000 (端口: 9000)
+[MCPOMonitor] 缓存启用: true
+[2025-11-09T07:40:10.177Z] [MCPOMonitor] [INFO] Starting real-time MCPO status monitoring...
+[2025-11-09T07:40:10.179Z] [MCPOMonitor] [INFO] Performing real-time status check (ignoring cache)...
+[2025-11-09T07:40:10.179Z] [MCPOMonitor] [INFO] Checking MCPO server health...
+[2025-11-09T07:40:10.186Z] [MCPOMonitor] [INFO] Fetching tool details from all services...
+[2025-11-09T07:40:10.280Z] [MCPOMonitor] [DEBUG] Making request to: http://0.0.0.0:9000/openapi.json {
+  "timeout": 5000,
+  "headers": {
+    "Authorization": "Bearer vcp-mcpo-secret",
+    "Content-Type": "application/json",
+    "User-Agent": "VCP-MCPOMonitor/1.0.0"
+  }
+}
+[2025-11-09T07:40:10.291Z] [MCPOMonitor] [DEBUG] Making request to: http://0.0.0.0:9000/openapi.json {
+  "timeout": 5000,
+  "headers": {
+    "Authorization": "Bearer vcp-mcpo-secret",
+    "Content-Type": "application/json",
+    "User-Agent": "VCP-MCPOMonitor/1.0.0"
+  }
+}
+[2025-11-09T07:40:10.301Z] [MCPOMonitor] [ERROR] Request failed for /openapi.json {
+  "error": "request to http://0.0.0.0:9000/openapi.json failed, reason: connect ECONNREFUSED 0.0.0.0:9000"
+}
+[2025-11-09T07:40:10.301Z] [MCPOMonitor] [DEBUG] Making request to: http://0.0.0.0:9000/openapi.json {
+  "timeout": 5000,
+  "headers": {
+    "Authorization": "Bearer vcp-mcpo-secret",
+    "Content-Type": "application/json",
+    "User-Agent": "VCP-MCPOMonitor/1.0.0"
+  }
+}
+[2025-11-09T07:40:10.303Z] [MCPOMonitor] [ERROR] Request failed for /openapi.json {
+  "error": "request to http://0.0.0.0:9000/openapi.json failed, reason: connect ECONNREFUSED 0.0.0.0:9000"
+}
+[2025-11-09T07:40:10.304Z] [MCPOMonitor] [ERROR] Failed to get tool details {
+  "error": "无法获取主OpenAPI规范: request to http://0.0.0.0:9000/openapi.json failed, reason: connect ECONNREFUSED 0.0.0.0:9000"
+}
+[2025-11-09T07:40:10.306Z] [MCPOMonitor] [ERROR] Request failed for /openapi.json {
+  "error": "request to http://0.0.0.0:9000/openapi.json failed, reason: connect ECONNREFUSED 0.0.0.0:9000"
+}
+[2025-11-09T07:40:10.341Z] [MCPOMonitor] [INFO] Cache updated successfully
+[2025-11-09T07:40:10.341Z] [MCPOMonitor] [INFO] Real-time status monitoring completed successfully at 2025/11/9 15:40:10
+[PluginManager] Placeholder {{MCPOServiceStatus}} for MCPOMonitor updated with value: "# 🔧 MCPO 服务状态监控报告（实时 检测）
+
+## 📊 服务器状态概览
+
+**服务器状态**: 🔴 连接失败
+**检测模式**: ..."
+[PluginManager] Scheduled update for static plugin: FRPSInfoProvider
+[PluginManager] Updating static plugin: FRPSInfoProvider
+[PluginManager] Scheduled update for static plugin: MCPOMonitor
+[PluginManager] Updating static plugin: MCPOMonitor
+[PluginManager] Static plugin FRPSInfoProvider produced stderr output: Error: FRPS_BASE_URL, FRPS_ADMIN_USER, or FRPS_ADMIN_PASSWORD environment variables are not set.
+[FRPSInfoProvider][Debug] 2025-11-09T07:40:20.301Z: FRPS config missing and cache unavailable: ENOENT: no such file or directory, open 'D:\327AI-VCP\VCPToolBox\Plugin\FRPSInfoProvider\frps_info_cache.txt'
+[PluginManager] Placeholder {{FRPSAllProxyInfo}} for FRPSInfoProvider updated with value: "Error: FRPS_BASE_URL, FRPS_ADMIN_USER, or FRPS_ADMIN_PASSWORD environm..."
+[PluginManager] Static plugin MCPOMonitor produced stderr output: [MCPOMonitor] 配置的刷新间隔: */10 * * * * *
+[MCPOMonitor] MCPO服务器: http://0.0.0.0:9000 (端口: 9000)
+[MCPOMonitor] 缓存启用: true
+[2025-11-09T07:40:20.190Z] [MCPOMonitor] [INFO] Starting real-time MCPO status monitoring...
+[2025-11-09T07:40:20.191Z] [MCPOMonitor] [INFO] Performing real-time status check (ignoring cache)...
+[2025-11-09T07:40:20.192Z] [MCPOMonitor] [INFO] Checking MCPO server health...
+[2025-11-09T07:40:20.197Z] [MCPOMonitor] [INFO] Fetching tool details from all services...
+[2025-11-09T07:40:20.283Z] [MCPOMonitor] [DEBUG] Making request to: http://0.0.0.0:9000/openapi.json {
+  "timeout": 5000,
+  "headers": {
+    "Authorization": "Bearer vcp-mcpo-secret",
+    "Content-Type": "application/json",
+    "User-Agent": "VCP-MCPOMonitor/1.0.0"
+  }
+}
+[2025-11-09T07:40:20.291Z] [MCPOMonitor] [DEBUG] Making request to: http://0.0.0.0:9000/openapi.json {
+  "timeout": 5000,
+  "headers": {
+    "Authorization": "Bearer vcp-mcpo-secret",
+    "Content-Type": "application/json",
+    "User-Agent": "VCP-MCPOMonitor/1.0.0"
+  }
+}
+[2025-11-09T07:40:20.299Z] [MCPOMonitor] [ERROR] Request failed for /openapi.json {
+  "error": "request to http://0.0.0.0:9000/openapi.json failed, reason: connect ECONNREFUSED 0.0.0.0:9000"
+}
+[2025-11-09T07:40:20.300Z] [MCPOMonitor] [DEBUG] Making request to: http://0.0.0.0:9000/openapi.json {
+  "timeout": 5000,
+  "headers": {
+    "Authorization": "Bearer vcp-mcpo-secret",
+    "Content-Type": "application/json",
+    "User-Agent": "VCP-MCPOMonitor/1.0.0"
+  }
+}
+[2025-11-09T07:40:20.302Z] [MCPOMonitor] [ERROR] Request failed for /openapi.json {
+  "error": "request to http://0.0.0.0:9000/openapi.json failed, reason: connect ECONNREFUSED 0.0.0.0:9000"
+}
+[2025-11-09T07:40:20.302Z] [MCPOMonitor] [ERROR] Failed to get tool details {
+  "error": "无法获取主OpenAPI规范: request to http://0.0.0.0:9000/openapi.json failed, reason: connect ECONNREFUSED 0.0.0.0:9000"
+}
+[2025-11-09T07:40:20.304Z] [MCPOMonitor] [ERROR] Request failed for /openapi.json {
+  "error": "request to http://0.0.0.0:9000/openapi.json failed, reason: connect ECONNREFUSED 0.0.0.0:9000"
+}
+[2025-11-09T07:40:20.343Z] [MCPOMonitor] [INFO] Cache updated successfully
+[2025-11-09T07:40:20.343Z] [MCPOMonitor] [INFO] Real-time status monitoring completed successfully at 2025/11/9 15:40:20
+[PluginManager] Placeholder {{MCPOServiceStatus}} for MCPOMonitor updated with value: "# 🔧 MCPO 服务状态监控报告（实时 检测）
+
+## 📊 服务器状态概览
+
+**服务器状态**: 🔴 连接失败
+**检测模式**: ..."
+[PluginManager] Scheduled update for static plugin: MCPOMonitor
+[PluginManager] Updating static plugin: MCPOMonitor
+[PluginManager] Scheduled update for static plugin: FRPSInfoProvider
+[PluginManager] Updating static plugin: FRPSInfoProvider
+[PluginManager] Static plugin FRPSInfoProvider produced stderr output: Error: FRPS_BASE_URL, FRPS_ADMIN_USER, or FRPS_ADMIN_PASSWORD environment variables are not set.
+[FRPSInfoProvider][Debug] 2025-11-09T07:40:30.271Z: FRPS config missing and cache unavailable: ENOENT: no such file or directory, open 'D:\327AI-VCP\VCPToolBox\Plugin\FRPSInfoProvider\frps_info_cache.txt'
+[PluginManager] Placeholder {{FRPSAllProxyInfo}} for FRPSInfoProvider updated with value: "Error: FRPS_BASE_URL, FRPS_ADMIN_USER, or FRPS_ADMIN_PASSWORD environm..."
+[PluginManager] Static plugin MCPOMonitor produced stderr output: [MCPOMonitor] 配置的刷新间隔: */10 * * * * *
+[MCPOMonitor] MCPO服务器: http://0.0.0.0:9000 (端口: 9000)
+[MCPOMonitor] 缓存启用: true
+[2025-11-09T07:40:30.147Z] [MCPOMonitor] [INFO] Starting real-time MCPO status monitoring...
+[2025-11-09T07:40:30.148Z] [MCPOMonitor] [INFO] Performing real-time status check (ignoring cache)...
+[2025-11-09T07:40:30.148Z] [MCPOMonitor] [INFO] Checking MCPO server health...
+[2025-11-09T07:40:30.154Z] [MCPOMonitor] [INFO] Fetching tool details from all services...
+[2025-11-09T07:40:30.237Z] [MCPOMonitor] [DEBUG] Making request to: http://0.0.0.0:9000/openapi.json {
+  "timeout": 5000,
+  "headers": {
+    "Authorization": "Bearer vcp-mcpo-secret",
+    "Content-Type": "application/json",
+    "User-Agent": "VCP-MCPOMonitor/1.0.0"
+  }
+}
+[2025-11-09T07:40:30.245Z] [MCPOMonitor] [DEBUG] Making request to: http://0.0.0.0:9000/openapi.json {
+  "timeout": 5000,
+  "headers": {
+    "Authorization": "Bearer vcp-mcpo-secret",
+    "Content-Type": "application/json",
+    "User-Agent": "VCP-MCPOMonitor/1.0.0"
+  }
+}
+[2025-11-09T07:40:30.253Z] [MCPOMonitor] [ERROR] Request failed for /openapi.json {
+  "error": "request to http://0.0.0.0:9000/openapi.json failed, reason: connect ECONNREFUSED 0.0.0.0:9000"
+}
+[2025-11-09T07:40:30.253Z] [MCPOMonitor] [DEBUG] Making request to: http://0.0.0.0:9000/openapi.json {
+  "timeout": 5000,
+  "headers": {
+    "Authorization": "Bearer vcp-mcpo-secret",
+    "Content-Type": "application/json",
+    "User-Agent": "VCP-MCPOMonitor/1.0.0"
+  }
+}
+[2025-11-09T07:40:30.255Z] [MCPOMonitor] [ERROR] Request failed for /openapi.json {
+  "error": "request to http://0.0.0.0:9000/openapi.json failed, reason: connect ECONNREFUSED 0.0.0.0:9000"
+}
+[2025-11-09T07:40:30.255Z] [MCPOMonitor] [ERROR] Failed to get tool details {
+  "error": "无法获取主OpenAPI规范: request to http://0.0.0.0:9000/openapi.json failed, reason: connect ECONNREFUSED 0.0.0.0:9000"
+}
+[2025-11-09T07:40:30.256Z] [MCPOMonitor] [ERROR] Request failed for /openapi.json {
+  "error": "request to http://0.0.0.0:9000/openapi.json failed, reason: connect ECONNREFUSED 0.0.0.0:9000"
+}
+[2025-11-09T07:40:30.297Z] [MCPOMonitor] [INFO] Cache updated successfully
+[2025-11-09T07:40:30.297Z] [MCPOMonitor] [INFO] Real-time status monitoring completed successfully at 2025/11/9 15:40:30
+[PluginManager] Placeholder {{MCPOServiceStatus}} for MCPOMonitor updated with value: "# 🔧 MCPO 服务状态监控报告（实时 检测）
+
+## 📊 服务器状态概览
+
+**服务器状态**: 🔴 连接失败
+**检测模式**: ..."
+[PluginManager] Scheduled update for static plugin: FRPSInfoProvider
+[PluginManager] Updating static plugin: FRPSInfoProvider
+[PluginManager] Scheduled update for static plugin: MCPOMonitor
+[PluginManager] Updating static plugin: MCPOMonitor
+[PluginManager] Static plugin FRPSInfoProvider produced stderr output: Error: FRPS_BASE_URL, FRPS_ADMIN_USER, or FRPS_ADMIN_PASSWORD environment variables are not set.
+[FRPSInfoProvider][Debug] 2025-11-09T07:40:40.293Z: FRPS config missing and cache unavailable: ENOENT: no such file or directory, open 'D:\327AI-VCP\VCPToolBox\Plugin\FRPSInfoProvider\frps_info_cache.txt'
+[PluginManager] Placeholder {{FRPSAllProxyInfo}} for FRPSInfoProvider updated with value: "Error: FRPS_BASE_URL, FRPS_ADMIN_USER, or FRPS_ADMIN_PASSWORD environm..."
+[PluginManager] Static plugin MCPOMonitor produced stderr output: [MCPOMonitor] 配置的刷新间隔: */10 * * * * *
+[MCPOMonitor] MCPO服务器: http://0.0.0.0:9000 (端口: 9000)
+[MCPOMonitor] 缓存启用: true
+[2025-11-09T07:40:40.170Z] [MCPOMonitor] [INFO] Starting real-time MCPO status monitoring...
+[2025-11-09T07:40:40.172Z] [MCPOMonitor] [INFO] Performing real-time status check (ignoring cache)...
+[2025-11-09T07:40:40.172Z] [MCPOMonitor] [INFO] Checking MCPO server health...
+[2025-11-09T07:40:40.177Z] [MCPOMonitor] [INFO] Fetching tool details from all services...
+[2025-11-09T07:40:40.265Z] [MCPOMonitor] [DEBUG] Making request to: http://0.0.0.0:9000/openapi.json {
+  "timeout": 5000,
+  "headers": {
+    "Authorization": "Bearer vcp-mcpo-secret",
+    "Content-Type": "application/json",
+    "User-Agent": "VCP-MCPOMonitor/1.0.0"
+  }
+}
+[2025-11-09T07:40:40.273Z] [MCPOMonitor] [DEBUG] Making request to: http://0.0.0.0:9000/openapi.json {
+  "timeout": 5000,
+  "headers": {
+    "Authorization": "Bearer vcp-mcpo-secret",
+    "Content-Type": "application/json",
+    "User-Agent": "VCP-MCPOMonitor/1.0.0"
+  }
+}
+[2025-11-09T07:40:40.280Z] [MCPOMonitor] [ERROR] Request failed for /openapi.json {
+  "error": "request to http://0.0.0.0:9000/openapi.json failed, reason: connect ECONNREFUSED 0.0.0.0:9000"
+}
+[2025-11-09T07:40:40.281Z] [MCPOMonitor] [DEBUG] Making request to: http://0.0.0.0:9000/openapi.json {
+  "timeout": 5000,
+  "headers": {
+    "Authorization": "Bearer vcp-mcpo-secret",
+    "Content-Type": "application/json",
+    "User-Agent": "VCP-MCPOMonitor/1.0.0"
+  }
+}
+[2025-11-09T07:40:40.282Z] [MCPOMonitor] [ERROR] Request failed for /openapi.json {
+  "error": "request to http://0.0.0.0:9000/openapi.json failed, reason: connect ECONNREFUSED 0.0.0.0:9000"
+}
+[2025-11-09T07:40:40.282Z] [MCPOMonitor] [ERROR] Failed to get tool details {
+  "error": "无法获取主OpenAPI规范: request to http://0.0.0.0:9000/openapi.json failed, reason: connect ECONNREFUSED 0.0.0.0:9000"
+}
+[2025-11-09T07:40:40.283Z] [MCPOMonitor] [ERROR] Request failed for /openapi.json {
+  "error": "request to http://0.0.0.0:9000/openapi.json failed, reason: connect ECONNREFUSED 0.0.0.0:9000"
+}
+[2025-11-09T07:40:40.331Z] [MCPOMonitor] [INFO] Cache updated successfully
+[2025-11-09T07:40:40.332Z] [MCPOMonitor] [INFO] Real-time status monitoring completed successfully at 2025/11/9 15:40:40
+[PluginManager] Placeholder {{MCPOServiceStatus}} for MCPOMonitor updated with value: "# 🔧 MCPO 服务状态监控报告（实时 检测）
+
+## 📊 服务器状态概览
+
+**服务器状态**: 🔴 连接失败
+**检测模式**: ..."
+[PluginManager] Scheduled update for static plugin: MCPOMonitor
+[PluginManager] Updating static plugin: MCPOMonitor
+[PluginManager] Scheduled update for static plugin: FRPSInfoProvider
+[PluginManager] Updating static plugin: FRPSInfoProvider
+[PluginManager] Static plugin FRPSInfoProvider produced stderr output: Error: FRPS_BASE_URL, FRPS_ADMIN_USER, or FRPS_ADMIN_PASSWORD environment variables are not set.
+[FRPSInfoProvider][Debug] 2025-11-09T07:40:55.920Z: FRPS config missing and cache unavailable: ENOENT: no such file or directory, open 'D:\327AI-VCP\VCPToolBox\Plugin\FRPSInfoProvider\frps_info_cache.txt'
+[PluginManager] Placeholder {{FRPSAllProxyInfo}} for FRPSInfoProvider updated with value: "Error: FRPS_BASE_URL, FRPS_ADMIN_USER, or FRPS_ADMIN_PASSWORD environm..."
+[PluginManager] Static plugin MCPOMonitor produced stderr output: [MCPOMonitor] 配置的刷新间隔: */10 * * * * *
+[MCPOMonitor] MCPO服务器: http://0.0.0.0:9000 (端口: 9000)
+[MCPOMonitor] 缓存启用: true
+[2025-11-09T07:40:55.868Z] [MCPOMonitor] [INFO] Starting real-time MCPO status monitoring...
+[2025-11-09T07:40:55.868Z] [MCPOMonitor] [INFO] Performing real-time status check (ignoring cache)...
+[2025-11-09T07:40:55.869Z] [MCPOMonitor] [INFO] Checking MCPO server health...
+[2025-11-09T07:40:55.871Z] [MCPOMonitor] [INFO] Fetching tool details from all services...
+[2025-11-09T07:40:55.908Z] [MCPOMonitor] [DEBUG] Making request to: http://0.0.0.0:9000/openapi.json {
+  "timeout": 5000,
+  "headers": {
+    "Authorization": "Bearer vcp-mcpo-secret",
+    "Content-Type": "application/json",
+    "User-Agent": "VCP-MCPOMonitor/1.0.0"
+  }
+}
+[2025-11-09T07:40:55.912Z] [MCPOMonitor] [DEBUG] Making request to: http://0.0.0.0:9000/openapi.json {
+  "timeout": 5000,
+  "headers": {
+    "Authorization": "Bearer vcp-mcpo-secret",
+    "Content-Type": "application/json",
+    "User-Agent": "VCP-MCPOMonitor/1.0.0"
+  }
+}
+[2025-11-09T07:40:55.916Z] [MCPOMonitor] [ERROR] Request failed for /openapi.json {
+  "error": "request to http://0.0.0.0:9000/openapi.json failed, reason: connect ECONNREFUSED 0.0.0.0:9000"
+}
+[2025-11-09T07:40:55.916Z] [MCPOMonitor] [DEBUG] Making request to: http://0.0.0.0:9000/openapi.json {
+  "timeout": 5000,
+  "headers": {
+    "Authorization": "Bearer vcp-mcpo-secret",
+    "Content-Type": "application/json",
+    "User-Agent": "VCP-MCPOMonitor/1.0.0"
+  }
+}
+[2025-11-09T07:40:55.917Z] [MCPOMonitor] [ERROR] Request failed for /openapi.json {
+  "error": "request to http://0.0.0.0:9000/openapi.json failed, reason: connect ECONNREFUSED 0.0.0.0:9000"
+}
+[2025-11-09T07:40:55.917Z] [MCPOMonitor] [ERROR] Failed to get tool details {
+  "error": "无法获取主OpenAPI规范: request to http://0.0.0.0:9000/openapi.json failed, reason: connect ECONNREFUSED 0.0.0.0:9000"
+}
+[2025-11-09T07:40:55.918Z] [MCPOMonitor] [ERROR] Request failed for /openapi.json {
+  "error": "request to http://0.0.0.0:9000/openapi.json failed, reason: connect ECONNREFUSED 0.0.0.0:9000"
+}
+[2025-11-09T07:40:55.937Z] [MCPOMonitor] [INFO] Cache updated successfully
+[2025-11-09T07:40:55.937Z] [MCPOMonitor] [INFO] Real-time status monitoring completed successfully at 2025/11/9 15:40:55
+[PluginManager] Placeholder {{MCPOServiceStatus}} for MCPOMonitor updated with value: "# 🔧 MCPO 服务状态监控报告（实时 检测）
+
+## 📊 服务器状态概览
+
+**服务器状态**: 🔴 连接失败
+**检测模式**: ..."
+Initiating graceful shutdown...
+[Server] Shutting down WebSocketServer...
+[WebSocketServer] Shutting down...
+[WebSocketServer] 2025-11-09T07:40:56.188Z - WebSocketServer shutdown.
+[PluginManager] Shutting down all plugins...
+[PluginManager] Calling shutdown for VectorDBManager...
+[VectorDB] Shutting down worker pool...
+[WorkerPool] Terminating worker pool...
+[WorkerPool] All workers have been terminated.
+[VectorDB] Worker pool shut down successfully.
+[PluginManager] Calling shutdown for ImageProcessor...
+[WebSocketServer] Client mhqvfnda-t064brs (VCPLog) disconnected.
+[SynapsePusher] WebSocket client to VCPLog source disconnected. Code: 1005, Reason: . Attempting to reconnect...
+[MultiModalProcessor][Debug] Media cache saved to D:\327AI-VCP\VCPToolBox\Plugin\ImageProcessor\multimodal_cache.json
+[MultiModalProcessor] Shutdown complete, cache saved.
+[PluginManager] Calling shutdown for VCPTavern...
+[VCPTavern] 插件已卸载。
+[PluginManager] Calling shutdown for service plugin SynapsePusher...
+[SynapsePusher] Shutting down...
+[SynapsePusher] Shutdown complete.
+[PluginManager] Calling shutdown for service plugin VCPLog...
+[VCPLog] Shutting down VCPLog plugin (logging only)...
+[PluginManager] Calling shutdown for service plugin VCPTavern...
+[VCPTavern] 插件已卸载。
+[PluginManager] All plugin shutdown processes initiated and scheduled jobs cancelled.
+[Server] Closing server log file stream...
+[Server] Server log stream closed.
+Graceful shutdown complete. Exiting.
+[Server] Exiting with code 0.
+终止批处理操作吗(Y/N)?

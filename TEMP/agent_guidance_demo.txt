@@ -1,0 +1,2 @@
+This file was created by [App]VCP工具运维 to demonstrate the correct use of ServerFileOperator.
+The key is using the right tool and following the single-step execution principle.

@@ -78,13 +78,18 @@ class ChatCompletionHandler {
       apiRetryDelay,
     } = this.config;
 
-    const shouldShowVCP = SHOW_VCP_OUTPUT || forceShowVCP;
-
-    let clientIp = req.ip;
-    if (clientIp && clientIp.substr(0, 7) === '::ffff:') {
-      clientIp = clientIp.substr(7);
-    }
-
+          const shouldShowVCP = SHOW_VCP_OUTPUT || forceShowVCP;
+    
+        // VCP_FIX: Extract agent name from request body to enforce consistent diary saving
+        const agentNameFromRequest = req.body.character || req.body.maid || null;
+        if (DEBUG_MODE && agentNameFromRequest) {
+          console.log(`[VCP-DiaryFix] Extracted agent name from request: ${agentNameFromRequest}`);
+        }
+    
+        let clientIp = req.ip;
+        if (clientIp && clientIp.substr(0, 7) === '::ffff:') {
+          clientIp = clientIp.substr(7);
+        }
     const id = req.body.requestId || req.body.messageId;
     const abortController = new AbortController();
 
@@ -436,7 +441,7 @@ class ChatCompletionHandler {
         let initialAIResponseData = await processAIResponseStreamHelper(firstAiAPIResponse, true);
         currentAIContentForLoop = initialAIResponseData.content;
         currentAIRawDataForDiary = initialAIResponseData.raw;
-        handleDiaryFromAIResponse(currentAIRawDataForDiary).catch(e =>
+        handleDiaryFromAIResponse(currentAIRawDataForDiary, agentNameFromRequest).catch(e =>
           console.error('[VCP Stream Loop] Error in initial diary handling:', e),
         );
         if (DEBUG_MODE)
@@ -860,7 +865,7 @@ class ChatCompletionHandler {
           let nextAIResponseData = await processAIResponseStreamHelper(nextAiAPIResponse, false);
           currentAIContentForLoop = nextAIResponseData.content;
           currentAIRawDataForDiary = nextAIResponseData.raw;
-          handleDiaryFromAIResponse(currentAIRawDataForDiary).catch(e =>
+          handleDiaryFromAIResponse(currentAIRawDataForDiary, agentNameFromRequest).catch(e =>
             console.error(`[VCP Stream Loop] Error in diary handling for depth ${recursionDepth}:`, e),
           );
           if (DEBUG_MODE)
@@ -1387,7 +1392,7 @@ class ChatCompletionHandler {
           res.send(Buffer.from(JSON.stringify(finalJsonResponse)));
         }
         // Handle diary for the *first* AI response in non-streaming mode
-        await handleDiaryFromAIResponse(firstResponseRawDataForClientAndDiary);
+        await handleDiaryFromAIResponse(firstResponseRawDataForClientAndDiary, agentNameFromRequest);
       }
     } catch (error) {
       if (error.name === 'AbortError') {

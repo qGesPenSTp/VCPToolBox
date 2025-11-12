@@ -179,15 +179,20 @@ module.exports = function(DEBUG_MODE, dailyNoteRootPath, pluginManager, getCurre
 
     // POST to save main config.env content
     adminApiRouter.post('/config/main', async (req, res) => {
+        console.log('[AdminPanelRoutes] Received POST request to /config/main');
         const { content } = req.body;
         if (typeof content !== 'string') {
+            console.error('[AdminPanelRoutes] Invalid content format. String expected.');
             return res.status(400).json({ error: 'Invalid content format. String expected.' });
         }
+        console.log('[AdminPanelRoutes] Received content to save:', content);
         try {
             const configPath = path.join(__dirname, '..', 'config.env');
             await fs.writeFile(configPath, content, 'utf-8');
+            console.log('[AdminPanelRoutes] Successfully wrote to config.env');
             // Reload all plugins to apply changes from the main config.env
             await pluginManager.loadPlugins();
+            console.log('[AdminPanelRoutes] Reloaded plugins.');
             res.json({ message: '主配置已成功保存并已重新加载。' });
         } catch (error) {
             console.error('Error writing main config for admin panel:', error);

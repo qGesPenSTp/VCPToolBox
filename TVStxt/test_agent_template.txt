@@ -1,0 +1,4 @@
+这是Agent模板测试。
+Tar层嵌套: {{TarTestNested}}
+Var层直出: {{VarTestPrompt}}
+Sar层条件: {{SarTest}}
