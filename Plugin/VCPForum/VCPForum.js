@@ -23,10 +23,11 @@ function sanitizeFilename(name) {
  * @returns {Promise<object>} - The result of the operation.
  */
 async function createPost(args) {
-    const { maid, board, title, content } = args;
-    if (!maid || !board || !title || !content) {
+    const { maid, board, title, content: rawContent } = args;
+    if (!maid || !board || !title || !rawContent) {
         throw new Error("创建帖子需要 'maid', 'board', 'title', 和 'content' 参数。");
     }
+    const content = rawContent.replace(/\\n/g, '\n').replace(/\\"/g, '"');
 
     const timestamp = new Date().toISOString();
     const sanitizedTimestamp = timestamp.replace(/:/g, '-'); // Replace colons for Windows compatibility
@@ -74,10 +75,10 @@ ${content}
  */
 async function replyToPost(args) {
     const { maid, post_uid, content: rawContent } = args;
-    const content = rawContent.replace(/\\n/g, '\n');
-    if (!maid || !post_uid || !content) {
+    if (!maid || !post_uid || !rawContent) {
         throw new Error("回复帖子需要 'maid', 'post_uid', 和 'content' 参数。");
     }
+    const content = rawContent.replace(/\\n/g, '\n').replace(/\\"/g, '"');
 
     await fs.mkdir(FORUM_DIR, { recursive: true });
     const files = await fs.readdir(FORUM_DIR);

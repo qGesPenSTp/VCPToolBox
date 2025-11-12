@@ -5,6 +5,7 @@ const axios = require('axios');
 const fs = require('fs').promises;
 const path = require('path');
 const dayjs = require('dayjs');
+const crypto = require('crypto');
 const utc = require('dayjs/plugin/utc');
 const timezone = require('dayjs/plugin/timezone');
 dayjs.extend(utc);
@@ -17,6 +18,9 @@ class AIMemoHandler {
         this.ragPlugin = ragPlugin;
         this.config = {};
         this.promptTemplate = '';
+        this.cache = new Map();
+        this.cacheMaxSize = parseInt(process.env.AIMemoCacheSize) || 10; // 缓存大小
+        this.cacheTTL = (parseInt(process.env.AIMemoCacheTTL) || 10) * 60 * 1000; // 缓存有效期（分钟）
         // 不在构造函数中调用 loadConfig，而是在主插件初始化时调用
     }
 
@@ -65,6 +69,16 @@ class AIMemoHandler {
         console.log(`[AIMemoHandler] 聚合处理 ${dbNames.length} 个日记本: ${dbNames.join(', ')}`);
 
         try {
+            // --- 缓存机制 ---
+            const cacheKey = this._getCacheKey(dbNames, userContent, aiContent);
+            const cached = this._getCache(cacheKey);
+            if (cached) {
+                console.log(`[AIMemoHandler] 命中缓存，直接返回结果。Key: ${cacheKey}`);
+                return cached;
+            }
+            console.log(`[AIMemoHandler] 未命中缓存，继续处理。Key: ${cacheKey}`);
+            // --- 缓存机制结束 ---
+
             // 1. 收集所有日记文件（基于文件级别，而非合并后的字符串）
             const allDiaryFiles = [];
             const loadedDiaries = [];
@@ -100,6 +114,7 @@ class AIMemoHandler {
                 result = await this._processSingleAggregated(loadedDiaries, allDiaryFiles, userContent, aiContent, combinedQueryForDisplay);
             }
 
+            this._setCache(cacheKey, result);
             return result;
 
         } catch (error) {
@@ -107,6 +122,42 @@ class AIMemoHandler {
             return `[AIMemo聚合处理失败: ${error.message}]`;
         }
     }
+
+    // --- 缓存辅助方法 ---
+
+    _getCacheKey(dbNames, userContent, aiContent) {
+        const sortedDbNames = [...dbNames].sort().join(',');
+        const combined = `${sortedDbNames}|${userContent}|${aiContent}`;
+        return crypto.createHash('sha256').update(combined).digest('hex');
+    }
+
+    _getCache(key) {
+        const entry = this.cache.get(key);
+        if (!entry) {
+            return null;
+        }
+
+        if (Date.now() - entry.timestamp > this.cacheTTL) {
+            console.log(`[AIMemoHandler] 缓存条目已过期，删除。Key: ${key}`);
+            this.cache.delete(key);
+            return null;
+        }
+
+        return entry.result;
+    }
+
+    _setCache(key, result) {
+        if (this.cache.size >= this.cacheMaxSize) {
+            // 删除最旧的条目 (Map an insertion order)
+            const oldestKey = this.cache.keys().next().value;
+            this.cache.delete(oldestKey);
+            console.log(`[AIMemoHandler] 缓存已满，删除最旧条目。Key: ${oldestKey}`);
+        }
+        this.cache.set(key, { result, timestamp: Date.now() });
+        console.log(`[AIMemoHandler] 结果已存入缓存。Key: ${key}`);
+    }
+
+    // --- 缓存辅助方法结束 ---
 
     /**
      * 单次聚合处理
